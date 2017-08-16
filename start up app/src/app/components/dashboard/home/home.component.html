@@ -1,0 +1,98 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" *ngFor="let contact of contacts">
+            <div class="card">
+              <img class="card-img-top" src="{{contact.image}}" height="200px" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">{{contact.name}} <small *ngIf="contact.role">( {{contact.role}} )</small></h4>
+                <h6>{{contact.email}}</h6>
+                <p class="card-text">Some quick contact text to build on the card title. {{contact.info}}</p>
+                <a href="#" class="btn btn-primary" (click)="showContact(contact)">Show Details </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3" *ngIf="contactDetails.name">
+        <div class="row">
+          <div class="col">
+            <div class="card" style="height:100%">
+              <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                <div class="card-block">
+                  <div class="form-group row">
+                    <label for="contact-name-input" class="col-3 col-form-label">Name</label>
+                    <div class="col-9">
+                      <input class="form-control" type="text" [(ngModel)]=contactDetails.name name="name" id="contact-name-input">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="contact-company-input" class="col-3 col-form-label">Company</label>
+                    <div class="col-9">
+                      <input class="form-control" type="text" [(ngModel)]=contactDetails.company name="company" id="contact-company-input">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="contact-email-input" class="col-3 col-form-label">Email</label>
+                    <div class="col-9">
+                      <input class="form-control" type="email" [(ngModel)]=contactDetails.email name="email" id="contact-email-input">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="contactTextarea" class="col-3 col-form-label">Info</label>
+                    <div class="col-9">
+                      <textarea class="form-control" [(ngModel)]=contactDetails.info id="contactTextarea" name="info" rows="3"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="contact-location-input" class="col-3 col-form-label">Location</label>
+                    <div class="col-9">
+                      <input class="form-control" type="text" [(ngModel)]=contactDetails.location name="location" id="contact-location-input">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="contact-role-input" class="col-3 col-form-label">Role</label>
+                    <div class="col-9">
+                      <input class="form-control" type="text" [(ngModel)]=contactDetails.role name="role" id="contact-role-input">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="contact-twitter-input" class="col-3 col-form-label">Twitter</label>
+                    <div class="col-9">
+                      <input class="form-control" type="text" [(ngModel)]=contactDetails.twitter name="twitter" id="contact-twitter-input">
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-md-center">
+                  <div class="col-3 col-md-auto">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+
+               
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div class="col-sm-6">
+      <div class="card card-inverse card-primary mb-3" cardHover>
+        <div class="card-header">
+          Quote
+        </div>
+        <div class="card-block">
+          <blockquote class="card-blockquote">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>  -->
+
+    </div>
+  </div>
+</div>

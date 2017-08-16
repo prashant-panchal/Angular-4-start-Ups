@@ -2,6 +2,34 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
 
+## Add Bootstrap 4 to Angular project
+
+Install bootstrap Alpha release using NPM:
+
+Run `npm install --save bootstrap@4.0.0-alpha.6`.
+
+We chose a specific version to ensure future releases doesn’t break the sample. Optionally, run the following command to install the latest pre-release package.
+
+Run `npm install –save bootstrap@next`.
+
+Once the package is downloaded, add Bootstrap references in .angular-cli.json.
+
+Modify styles configuration to add Bootstrap CSS
+
+`
+styles": [
+    "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+    "styles.css"
+],`
+
+Modify scripts configuration to add jQuery, Bootstrap and Tether JS files.
+
+`"scripts": [
+    "../node_modules/jquery/dist/jquery.min.js",
+    "../node_modules/tether/dist/js/tether.min.js",        
+    "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+],`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
